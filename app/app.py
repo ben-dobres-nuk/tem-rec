@@ -3,11 +3,9 @@ from flask import jsonify
 import json
 import argparse
 
-
 import os
 
 ASSETS_DIR = os.path.dirname(os.path.abspath(__file__))
-
 
 with open('data/rec_proc.json') as json_file:
     response_data = json.load(json_file)
@@ -63,4 +61,4 @@ if __name__ == '__main__':
     else:
         host = '0.0.0.0'
 
-    app.run(port=port, debug=False, host=host)
+    app.run(port=port, debug=True, host=host)
