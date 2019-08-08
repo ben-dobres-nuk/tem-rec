@@ -3,6 +3,11 @@ from flask import jsonify
 import json
 import argparse
 
+from OpenSSL import SSL
+context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
+context.use_privatekey_file('server.key')
+context.use_certificate_file('server.crt')
+
 with open('data/rec_proc.json') as json_file:
     response_data = json.load(json_file)
 
@@ -57,4 +62,4 @@ if __name__ == '__main__':
     else:
         host = '0.0.0.0'
 
-    app.run(port=port, debug=False, host=host)
+    app.run(port=port, debug=False, host=host, ssl_context=context)
