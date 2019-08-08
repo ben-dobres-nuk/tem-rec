@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import jsonify
 import json
+import argparse
 
 with open('data/rec_proc.json') as json_file:
     response_data = json.load(json_file)
@@ -41,4 +42,18 @@ def reccomend(tag):
 
 
 if __name__ == '__main__':
-    app.run(port=8888, debug=True, host='0.0.0.0')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--port')
+
+    parser.add_argument('--local', dest='local', action='store_true')
+    parser.add_argument('--web', dest='local', action='store_false')
+    parser.set_defaults(feature=False)
+    parser.set_defaults(port=8888)
+    args = parser.parse_args()
+
+    if args.local:
+        host = 'localhost'
+    else:
+        host = '0.0.0.0'
+
+    app.run(port=args.port, debug=True, host=host)
