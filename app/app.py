@@ -38,3 +38,7 @@ def reccomend(tag):
         response = {"main_tag": tag, "rec": None, "rec_found": False}
 
     return jsonify(response)
+
+
+if __name__ == '__main__':
+    app.run(port=8888, debug=True)
