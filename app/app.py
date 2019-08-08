@@ -50,11 +50,11 @@ if __name__ == '__main__':
     parser.set_defaults(feature=False)
     parser.set_defaults(port=8888)
     args = parser.parse_args()
-    port=int(args.port)
+    port = int(args.port)
 
     if args.local:
         host = 'localhost'
     else:
         host = '0.0.0.0'
 
-    app.run(port=port, debug=True, host=host)
+    app.run(port=port, debug=False, host=host)
