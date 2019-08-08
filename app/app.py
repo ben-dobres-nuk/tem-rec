@@ -54,6 +54,6 @@ if __name__ == '__main__':
     if args.local:
         host = 'localhost'
     else:
-        host = '0.0.0.0'
+        host = 0.0.0.0
 
     app.run(port=args.port, debug=True, host=host)
