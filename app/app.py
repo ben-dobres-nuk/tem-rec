@@ -20,6 +20,9 @@ def index():
     return 'Index Page'
 
 
+# main reccommendation endpoint
+
+
 @app.route('/rec/')
 def no_tag():
     response = {"message": 'please choose a tag, for example: /rec/[tag]'}
@@ -35,12 +38,23 @@ def reccomend(tag):
         response = {
             "main_tag": tag,
             "rec": response_data[tag],
-            "rec_found": True
+            "valid_tag": True
         }
 
-    # otherwise report that no reccomendation exsits
+    # otherwise report that the tag was not valid
     else:
-        response = {"main_tag": tag, "rec": None, "rec_found": False}
+        response = {"main_tag": tag, "rec": None, "valid_tag": False}
+
+    return jsonify(response)
+
+
+# endpoint to check which tags we have
+
+
+@app.route('/valid_tags/')
+def valid_tags():
+
+    response = {"valid_tags": valid_tags}
 
     return jsonify(response)
 
@@ -52,7 +66,7 @@ if __name__ == '__main__':
     parser.add_argument('--local', dest='local', action='store_true')
     parser.add_argument('--web', dest='local', action='store_false')
     parser.set_defaults(feature=False)
-    parser.set_defaults(port=8888)
+    parser.set_defaults(port=5000)  # need port 5000 for Google VM
     args = parser.parse_args()
     port = int(args.port)
 
