@@ -11,6 +11,7 @@ with open('data/rec_proc.json') as json_file:
     response_data = json.load(json_file)
 
 valid_tags = response_data.keys()
+print(valid_tags)
 
 app = Flask(__name__)
 
@@ -54,7 +55,7 @@ def reccomend(tag):
 @app.route('/valid_tags/')
 def get_valid_tags():
 
-    response = {"valid_tags": valid_tags}
+    response = {"valid_tags": list(valid_tags)}
 
     return jsonify(response)
 
