@@ -52,7 +52,7 @@ def reccomend(tag):
 
 
 @app.route('/valid_tags/')
-def valid_tags():
+def get_valid_tags():
 
     response = {"valid_tags": valid_tags}
 
