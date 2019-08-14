@@ -1,16 +1,16 @@
 import json
 
 conversion_dict = {
-    "asp.movehomeTRUE": "life_myhome_planbuy",
-    "asp.homeimpTRUE": "product_mortgages_homeimp",
-    "asp.holidayTRUE": "life_luxury",
-    "concerned.retireVery concerned": "life_laterlife_livingwell.high",
+    "asp.movehomeTRUE": "Life Content\n My home\n Plan to buy",
+    "asp.homeimpTRUE": "Product Content\n Mortgages\n Home Improvement",
+    "asp.holidayTRUE": "Life Content: Luxury",
+    "concerned.retireVery concerned": "Life Content\n Later life\n Living well (very concerned)",
     "concerned.retireSlightly concerned": "life_laterlife_livingwell.low",
     "concerned.retireNot at all concerned": "life_laterlife_livingwell.none",
-    "concerned.movehomeVery concerned": "life_myhome_worrybuy.high",
+    "concerned.movehomeVery concerned": "Life Content\n My home\n Worried about buying (very concerned)",
     "concerned.movehomeSlightly concerned": "life_myhome_worrybuy.low",
     "concerned.movehomeNot at all concerned": "life_myhome_worrybuy.none",
-    "comp.property.investTRUE": "life_myhome_propinv",
+    "comp.property.investTRUE": "Life Content\n My home \n Property Investment",
     "financial.knowledgeA lot of knowledge": "knowledge.none",
     "financial.knowledgeSome knowledge": "knowledge.some",
     "financial.knowledgeVery little knowledge": "knowledge.verylow",
