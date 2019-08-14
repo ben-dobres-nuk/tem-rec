@@ -32,8 +32,13 @@ for main_tag in recs:
 
         sub_tag_new = conversion_dict[sub_tag_raw]
 
-        processed[main_tag][priority][sub_tag_new] = recs[main_tag][priority][
-            sub_tag_raw]
+        # remove negative tags from our set
+
+        if not any(substring in sub_tag_new
+                   for substring in ["low", "none", "verylow"]):
+
+            processed[main_tag][priority][sub_tag_new] = recs[main_tag][
+                priority][sub_tag_raw]
 
     for sub_tag_raw in prioritise_raw:
 
