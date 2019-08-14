@@ -1,5 +1,5 @@
 {
- "life_myhome_worrybuy.high": {
+ "Life Content\n My home\n Plan to buy": {
  "prioritise": {
  "asp.movehomeTRUE": 73.123,
 "concerned.retireVery concerned": 17.164,
@@ -16,7 +16,7 @@
 "financial.knowledgeSome knowledge": 0.74604 
 } 
 },
-"product_mortgages_homeimp": {
+"Product Content\n Mortgages\n Home Improvement": {
  "prioritise": {
  "comp.property.investTRUE": 1.9209,
 "asp.holidayTRUE": 1.5381,
@@ -35,7 +35,7 @@
 "financial.knowledgeA lot of knowledge": 0.92615 
 } 
 },
-"life_luxury": {
+"Life Content\n Luxury": {
  "prioritise": {
  "financial.knowledgeNo knowledge": 2.0313,
 "concerned.retireVery concerned": 1.6952,
@@ -54,7 +54,7 @@
 "asp.movehomeTRUE": 0.83435 
 } 
 },
-"life_laterlife_livingwell.high": {
+"Life Content\n Later Life\n Living Well (very concerned)": {
  "prioritise": {
  "comp.property.investTRUE": 1.154e+05,
 "concerned.movehomeVery concerned": 18.638,
@@ -71,7 +71,7 @@
 "asp.movehomeTRUE": 0.60128 
 } 
 },
-"life_myhome_propinv": {
+"Life Content\n My home\n Property Investment": {
  "prioritise": {
  "concerned.retireNot at all concerned":    100,
 "concerned.retireSlightly concerned":    100,
