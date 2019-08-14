@@ -1,93 +1,93 @@
 {
-    "move_home_concerned": {
-        "prioritise": {
-            "asp.movehomeTRUE": 73.123,
-            "concerned.retireVery concerned": 17.164,
-            "concerned.retireSlightly concerned": 2.2572,
-            "financial.knowledgeVery little knowledge": 2.1653,
-            "comp.property.investTRUE": 1.2935
-        },
-        "deprioritise": {
-            "financial.knowledgeNo knowledge": 9.6013e-05,
-            "asp.holidayTRUE": 0.46784,
-            "financial.knowledgeA lot of knowledge": 0.49555,
-            "asp.homeimpTRUE": 0.5585,
-            "concerned.retireNot at all concerned": 0.70882,
-            "financial.knowledgeSome knowledge": 0.74604
-        }
-    },
-    "home_improvement": {
-        "prioritise": {
-            "comp.property.investTRUE": 1.9209,
-            "asp.holidayTRUE": 1.5381,
-            "concerned.retireVery concerned": 1.2489,
-            "concerned.movehomeNot at all concerned": 1.2112,
-            "asp.movehomeTRUE": 1.2048,
-            "concerned.retireSlightly concerned": 1.2032,
-            "concerned.movehomeSlightly concerned": 1.124,
-            "concerned.retireNot at all concerned": 1.0295
-        },
-        "deprioritise": {
-            "financial.knowledgeNo knowledge": 0.36076,
-            "concerned.movehomeVery concerned": 0.62194,
-            "financial.knowledgeSome knowledge": 0.76513,
-            "financial.knowledgeVery little knowledge": 0.80702,
-            "financial.knowledgeA lot of knowledge": 0.92615
-        }
-    },
-    "holiday": {
-        "prioritise": {
-            "financial.knowledgeNo knowledge": 2.0313,
-            "concerned.retireVery concerned": 1.6952,
-            "concerned.retireSlightly concerned": 1.6478,
-            "asp.homeimpTRUE": 1.5418,
-            "concerned.retireNot at all concerned": 1.5014,
-            "financial.knowledgeSome knowledge": 1.3381,
-            "financial.knowledgeA lot of knowledge": 1.2761,
-            "financial.knowledgeVery little knowledge": 1.0413
-        },
-        "deprioritise": {
-            "concerned.movehomeVery concerned": 0.56444,
-            "concerned.movehomeSlightly concerned": 0.69443,
-            "concerned.movehomeNot at all concerned": 0.83294,
-            "comp.property.investTRUE": 0.83399,
-            "asp.movehomeTRUE": 0.83435
-        }
-    },
-    "pensions": {
-        "prioritise": {
-            "comp.property.investTRUE": 1.154e+05,
-            "concerned.movehomeVery concerned": 18.638,
-            "concerned.movehomeSlightly concerned": 4.781,
-            "concerned.movehomeNot at all concerned": 2.7363,
-            "asp.holidayTRUE": 1.7321,
-            "financial.knowledgeSome knowledge": 1.3938,
-            "asp.homeimpTRUE": 1.2643,
-            "financial.knowledgeA lot of knowledge": 1.0654,
-            "financial.knowledgeVery little knowledge": 1.0316
-        },
-        "deprioritise": {
-            "financial.knowledgeNo knowledge": 0.08168,
-            "asp.movehomeTRUE": 0.60128
-        }
-    },
-    "property_investment": {
-        "prioritise": {
-            "concerned.retireNot at all concerned": 100,
-            "concerned.retireSlightly concerned": 100,
-            "concerned.retireVery concerned": 100,
-            "concerned.movehomeSlightly concerned": 2.0138,
-            "concerned.movehomeVery concerned": 1.9905,
-            "asp.homeimpTRUE": 1.8736,
-            "concerned.movehomeNot at all concerned": 1.5491
-        },
-        "deprioritise": {
-            "financial.knowledgeA lot of knowledge": 0,
-            "financial.knowledgeNo knowledge": 0,
-            "financial.knowledgeSome knowledge": 0,
-            "financial.knowledgeVery little knowledge": 0.48647,
-            "asp.movehomeTRUE": 0.81124,
-            "asp.holidayTRUE": 0.81484
-        }
-    }
+ "life_myhome_worrybuy.high": {
+ "prioritise": {
+ "asp.movehomeTRUE": 73.123,
+"concerned.retireVery concerned": 17.164,
+"concerned.retireSlightly concerned": 2.2572,
+"financial.knowledgeVery little knowledge": 2.1653,
+"comp.property.investTRUE": 1.2935 
+},
+"deprioritise": {
+ "financial.knowledgeNo knowledge": 9.6013e-05,
+"asp.holidayTRUE": 0.46784,
+"financial.knowledgeA lot of knowledge": 0.49555,
+"asp.homeimpTRUE": 0.5585,
+"concerned.retireNot at all concerned": 0.70882,
+"financial.knowledgeSome knowledge": 0.74604 
+} 
+},
+"product_mortgages_homeimp": {
+ "prioritise": {
+ "comp.property.investTRUE": 1.9209,
+"asp.holidayTRUE": 1.5381,
+"concerned.retireVery concerned": 1.2489,
+"concerned.movehomeNot at all concerned": 1.2112,
+"asp.movehomeTRUE": 1.2048,
+"concerned.retireSlightly concerned": 1.2032,
+"concerned.movehomeSlightly concerned":  1.124,
+"concerned.retireNot at all concerned": 1.0295 
+},
+"deprioritise": {
+ "financial.knowledgeNo knowledge": 0.36076,
+"concerned.movehomeVery concerned": 0.62194,
+"financial.knowledgeSome knowledge": 0.76513,
+"financial.knowledgeVery little knowledge": 0.80702,
+"financial.knowledgeA lot of knowledge": 0.92615 
+} 
+},
+"life_luxury": {
+ "prioritise": {
+ "financial.knowledgeNo knowledge": 2.0313,
+"concerned.retireVery concerned": 1.6952,
+"concerned.retireSlightly concerned": 1.6478,
+"asp.homeimpTRUE": 1.5418,
+"concerned.retireNot at all concerned": 1.5014,
+"financial.knowledgeSome knowledge": 1.3381,
+"financial.knowledgeA lot of knowledge": 1.2761,
+"financial.knowledgeVery little knowledge": 1.0413 
+},
+"deprioritise": {
+ "concerned.movehomeVery concerned": 0.56444,
+"concerned.movehomeSlightly concerned": 0.69443,
+"concerned.movehomeNot at all concerned": 0.83294,
+"comp.property.investTRUE": 0.83399,
+"asp.movehomeTRUE": 0.83435 
+} 
+},
+"life_laterlife_livingwell.high": {
+ "prioritise": {
+ "comp.property.investTRUE": 1.154e+05,
+"concerned.movehomeVery concerned": 18.638,
+"concerned.movehomeSlightly concerned":  4.781,
+"concerned.movehomeNot at all concerned": 2.7363,
+"asp.holidayTRUE": 1.7321,
+"financial.knowledgeSome knowledge": 1.3938,
+"asp.homeimpTRUE": 1.2643,
+"financial.knowledgeA lot of knowledge": 1.0654,
+"financial.knowledgeVery little knowledge": 1.0316 
+},
+"deprioritise": {
+ "financial.knowledgeNo knowledge": 0.08168,
+"asp.movehomeTRUE": 0.60128 
+} 
+},
+"life_myhome_propinv": {
+ "prioritise": {
+ "concerned.retireNot at all concerned":    100,
+"concerned.retireSlightly concerned":    100,
+"concerned.retireVery concerned":    100,
+"concerned.movehomeSlightly concerned": 2.0138,
+"concerned.movehomeVery concerned": 1.9905,
+"asp.homeimpTRUE": 1.8736,
+"concerned.movehomeNot at all concerned": 1.5491 
+},
+"deprioritise": {
+ "financial.knowledgeA lot of knowledge":      0,
+"financial.knowledgeNo knowledge":      0,
+"financial.knowledgeSome knowledge":      0,
+"financial.knowledgeVery little knowledge": 0.48647,
+"asp.movehomeTRUE": 0.81124,
+"asp.holidayTRUE": 0.81484 
+} 
+} 
 }

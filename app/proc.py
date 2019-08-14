@@ -1,20 +1,20 @@
 import json
 
 conversion_dict = {
-    "asp.movehomeTRUE": "move_home_asp",
-    "asp.homeimpTRUE": "home_imp",
-    "asp.holidayTRUE": "holiday",
-    "concerned.retireVery concerned": "retire_veryconcerned",
-    "concerned.retireSlightly concerned": "retire_slightlyconcerned",
-    "concerned.retireNot at all concerned": "retire_notconcerned",
-    "concerned.movehomeVery concerned": "movehome_veryconcerned",
-    "concerned.movehomeSlightly concerned": "movehome_slightlyconcerned",
-    "concerned.movehomeNot at all concerned": "movehome_notconcerned",
-    "comp.property.investTRUE": "propinv_completed",
-    "financial.knowledgeA lot of knowledge": "knowledge_alot",
-    "financial.knowledgeSome knowledge": "knowledge_some",
-    "financial.knowledgeVery little knowledge": "knowledge_verylittle",
-    "financial.knowledgeNo knowledge": "knowledge_none",
+    "asp.movehomeTRUE": "life_myhome_planbuy",
+    "asp.homeimpTRUE": "product_mortgages_homeimp",
+    "asp.holidayTRUE": "life_luxury",
+    "concerned.retireVery concerned": "life_laterlife_livingwell.high",
+    "concerned.retireSlightly concerned": "life_laterlife_livingwell.low",
+    "concerned.retireNot at all concerned": "life_laterlife_livingwell.none",
+    "concerned.movehomeVery concerned": "life_myhome_worrybuy.high",
+    "concerned.movehomeSlightly concerned": "life_myhome_worrybuy.low",
+    "concerned.movehomeNot at all concerned": "life_myhome_worrybuy.none",
+    "comp.property.investTRUE": "life_myhome_propinv",
+    "financial.knowledgeA lot of knowledge": "knowledge.none",
+    "financial.knowledgeSome knowledge": "knowledge.some",
+    "financial.knowledgeVery little knowledge": "knowledge.verylow",
+    "financial.knowledgeNo knowledge": "knowledge.none",
 }
 
 with open('data/rec_raw.json') as json_file:

@@ -1,1 +1,89 @@
-{"move_home_concerned": {"prioritise": {"move_home_asp": 73.123, "retire_veryconcerned": 17.164, "retire_slightlyconcerned": 2.2572, "knowledge_verylittle": 2.1653, "propinv_completed": 1.2935}, "deprioritise": {"knowledge_none": 9.6013e-05, "holiday": 0.46784, "knowledge_alot": 0.49555, "home_imp": 0.5585, "retire_notconcerned": 0.70882, "knowledge_some": 0.74604}}, "home_improvement": {"prioritise": {"propinv_completed": 1.9209, "holiday": 1.5381, "retire_veryconcerned": 1.2489, "movehome_notconcerned": 1.2112, "move_home_asp": 1.2048, "retire_slightlyconcerned": 1.2032, "movehome_slightlyconcerned": 1.124, "retire_notconcerned": 1.0295}, "deprioritise": {"knowledge_none": 0.36076, "movehome_veryconcerned": 0.62194, "knowledge_some": 0.76513, "knowledge_verylittle": 0.80702, "knowledge_alot": 0.92615}}, "holiday": {"prioritise": {"knowledge_none": 2.0313, "retire_veryconcerned": 1.6952, "retire_slightlyconcerned": 1.6478, "home_imp": 1.5418, "retire_notconcerned": 1.5014, "knowledge_some": 1.3381, "knowledge_alot": 1.2761, "knowledge_verylittle": 1.0413}, "deprioritise": {"movehome_veryconcerned": 0.56444, "movehome_slightlyconcerned": 0.69443, "movehome_notconcerned": 0.83294, "propinv_completed": 0.83399, "move_home_asp": 0.83435}}, "pensions": {"prioritise": {"propinv_completed": 115400.0, "movehome_veryconcerned": 18.638, "movehome_slightlyconcerned": 4.781, "movehome_notconcerned": 2.7363, "holiday": 1.7321, "knowledge_some": 1.3938, "home_imp": 1.2643, "knowledge_alot": 1.0654, "knowledge_verylittle": 1.0316}, "deprioritise": {"knowledge_none": 0.08168, "move_home_asp": 0.60128}}, "property_investment": {"prioritise": {"retire_notconcerned": 100, "retire_slightlyconcerned": 100, "retire_veryconcerned": 100, "movehome_slightlyconcerned": 2.0138, "movehome_veryconcerned": 1.9905, "home_imp": 1.8736, "movehome_notconcerned": 1.5491}, "deprioritise": {"knowledge_alot": 0, "knowledge_none": 0, "knowledge_some": 0, "knowledge_verylittle": 0.48647, "move_home_asp": 0.81124, "holiday": 0.81484}}}
+{
+    "life_myhome_worrybuy.high": {
+        "prioritise": {
+            "life_myhome_planbuy": 73.123,
+            "life_laterlife_livingwell.high": 17.164,
+            "life_laterlife_livingwell.low": 2.2572,
+            "knowledge.verylow": 2.1653,
+            "life_myhome_propinv": 1.2935
+        },
+        "deprioritise": {
+            "knowledge.none": 0.49555,
+            "life_luxury": 0.46784,
+            "product_mortgages_homeimp": 0.5585,
+            "life_laterlife_livingwell.none": 0.70882,
+            "knowledge.some": 0.74604
+        }
+    },
+    "product_mortgages_homeimp": {
+        "prioritise": {
+            "life_myhome_propinv": 1.9209,
+            "life_luxury": 1.5381,
+            "life_laterlife_livingwell.high": 1.2489,
+            "life_myhome_worrybuy.none": 1.2112,
+            "life_myhome_planbuy": 1.2048,
+            "life_laterlife_livingwell.low": 1.2032,
+            "life_myhome_worrybuy.low": 1.124,
+            "life_laterlife_livingwell.none": 1.0295
+        },
+        "deprioritise": {
+            "knowledge.none": 0.92615,
+            "life_myhome_worrybuy.high": 0.62194,
+            "knowledge.some": 0.76513,
+            "knowledge.verylow": 0.80702
+        }
+    },
+    "life_luxury": {
+        "prioritise": {
+            "knowledge.none": 1.2761,
+            "life_laterlife_livingwell.high": 1.6952,
+            "life_laterlife_livingwell.low": 1.6478,
+            "product_mortgages_homeimp": 1.5418,
+            "life_laterlife_livingwell.none": 1.5014,
+            "knowledge.some": 1.3381,
+            "knowledge.verylow": 1.0413
+        },
+        "deprioritise": {
+            "life_myhome_worrybuy.high": 0.56444,
+            "life_myhome_worrybuy.low": 0.69443,
+            "life_myhome_worrybuy.none": 0.83294,
+            "life_myhome_propinv": 0.83399,
+            "life_myhome_planbuy": 0.83435
+        }
+    },
+    "life_laterlife_livingwell.high": {
+        "prioritise": {
+            "life_myhome_propinv": 115400.0,
+            "life_myhome_worrybuy.high": 18.638,
+            "life_myhome_worrybuy.low": 4.781,
+            "life_myhome_worrybuy.none": 2.7363,
+            "life_luxury": 1.7321,
+            "knowledge.some": 1.3938,
+            "product_mortgages_homeimp": 1.2643,
+            "knowledge.none": 1.0654,
+            "knowledge.verylow": 1.0316
+        },
+        "deprioritise": {
+            "knowledge.none": 0.08168,
+            "life_myhome_planbuy": 0.60128
+        }
+    },
+    "life_myhome_propinv": {
+        "prioritise": {
+            "life_laterlife_livingwell.none": 100,
+            "life_laterlife_livingwell.low": 100,
+            "life_laterlife_livingwell.high": 100,
+            "life_myhome_worrybuy.low": 2.0138,
+            "life_myhome_worrybuy.high": 1.9905,
+            "product_mortgages_homeimp": 1.8736,
+            "life_myhome_worrybuy.none": 1.5491
+        },
+        "deprioritise": {
+            "knowledge.none": 0,
+            "knowledge.some": 0,
+            "knowledge.verylow": 0.48647,
+            "life_myhome_planbuy": 0.81124,
+            "life_luxury": 0.81484
+        }
+    }
+}
