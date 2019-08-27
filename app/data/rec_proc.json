@@ -1,1 +1,376 @@
-{"LifeContent_MyHome_WorryAboutBuying": {"prioritise": {"LifeContent_Myhome_Plantobuy": 73.123, "LifeContent_LaterLife_LivingWell_VeryConcerned": 17.164, "LifeContent_ MyHome_PropertyInvestment": 1.2935}, "deprioritise": {"LifeContent: Luxury": 0.46784, "ProductContent_Mortgages_HomeImprovement": 0.5585, "knowledge.some": 0.74604}}, "ProductContent_Mortgages_HomeImprovement": {"prioritise": {"LifeContent_ MyHome_PropertyInvestment": 1.9209, "LifeContent: Luxury": 1.5381, "LifeContent_LaterLife_LivingWell_VeryConcerned": 1.2489, "LifeContent_Myhome_Plantobuy": 1.2048}, "deprioritise": {"LifeContent_MyHome_WorriedAboutBuying_VeryConcerned": 0.62194, "knowledge.some": 0.76513}}, "LifeContent_Luxury": {"prioritise": {"LifeContent_LaterLife_LivingWell_VeryConcerned": 1.6952, "ProductContent_Mortgages_HomeImprovement": 1.5418, "knowledge.some": 1.3381}, "deprioritise": {"LifeContent_MyHome_WorriedAboutBuying_VeryConcerned": 0.56444, "LifeContent_ MyHome_PropertyInvestment": 0.83399, "LifeContent_Myhome_Plantobuy": 0.83435}}, "LifeContent_LaterLife_LivingWell_VeryConcerned": {"prioritise": {"LifeContent_ MyHome_PropertyInvestment": 115400.0, "LifeContent_MyHome_WorriedAboutBuying_VeryConcerned": 18.638, "LifeContent: Luxury": 1.7321, "knowledge.some": 1.3938, "ProductContent_Mortgages_HomeImprovement": 1.2643}, "deprioritise": {"LifeContent_Myhome_Plantobuy": 0.60128}}, "LifeContent_Myhome_PropertyInvestment": {"prioritise": {"LifeContent_LaterLife_LivingWell_VeryConcerned": 100, "LifeContent_MyHome_WorriedAboutBuying_VeryConcerned": 1.9905, "ProductContent_Mortgages_HomeImprovement": 1.8736}, "deprioritise": {"knowledge.some": 0, "LifeContent_Myhome_Plantobuy": 0.81124, "LifeContent: Luxury": 0.81484}}}
+{
+    "Life_Career_SecondIncome": {
+        "prioritise": {
+            "Life_Career_Education": 0.17864020101677036,
+            "Life_Career_GoingFreelance": 0.7769713722739997,
+            "Life_Career_BusinessAfloat": 0.5171990690983728,
+            "Life_Home_BuyingAHome": 0.2588771827798612,
+            "Life_Home_FinishedMortgage": 0.10437553433542911,
+            "Life_MyFamily_StartingFamily": 0.4908749915484497,
+            "Life_MyFamily_ProvidingChildren": 0.3893645921620755,
+            "Life_MyFamily_OlderChildren": 0.3650375011166978,
+            "Life_LaterLife_LivingWell": 0.5754633217845815,
+            "Life_LaterLife_BecomingGrandparent": 0.037773408822206214,
+            "Life_LaterLife_HealthPlanning": 0.5643054116610275
+        },
+        "deprioritise": {
+            "Life_MyRelationships_GettingMarried": -0.003715449557205176,
+            "Life_Home_InvestingInProperty": -0.42960283953858414,
+            "Life_LaterLife_ReceivedInheritance": -0.2796784352355155,
+            "Life_Luxuries_MajorPurchase": -0.021442114262764274,
+            "Life_Luxuries_Travel": -0.06417380993211998
+        }
+    },
+    "Life_Career_Education": {
+        "prioritise": {
+            "Life_Career_SecondIncome": 0.19418919250165884,
+            "Life_Career_GoingFreelance": 0.4432769643730056,
+            "Life_MyRelationships_GettingMarried": 0.22443471704475632,
+            "Life_Home_BuyingAHome": 0.26212182655858945,
+            "Life_MyFamily_ProvidingChildren": 0.22401548321403375,
+            "Life_MyFamily_OlderChildren": 0.42091502556479493,
+            "Life_LaterLife_LivingWell": 0.07443153255527003,
+            "Life_LaterLife_BecomingGrandparent": 0.3605577066477529,
+            "Life_LaterLife_ReceivedInheritance": 0.2289443584400152,
+            "Life_Luxuries_MajorPurchase": 0.2065566914190737,
+            "Life_Luxuries_Travel": 0.36717831218711133
+        },
+        "deprioritise": {
+            "Life_Career_BusinessAfloat": -0.0744739711551556,
+            "Life_Home_InvestingInProperty": -0.04407278558496264,
+            "Life_Home_FinishedMortgage": -0.24658143504277855,
+            "Life_MyFamily_StartingFamily": -0.056880555724431646,
+            "Life_LaterLife_HealthPlanning": -0.07220202036743384
+        }
+    },
+    "Life_Career_GoingFreelance": {
+        "prioritise": {
+            "Life_Career_SecondIncome": 0.7714786685937183,
+            "Life_Career_Education": 0.4349179437411851,
+            "Life_Career_BusinessAfloat": 0.4784289193496848,
+            "Life_MyRelationships_GettingMarried": 0.7416746100199635,
+            "Life_Home_BuyingAHome": 0.46419923439349614,
+            "Life_Home_InvestingInProperty": 0.20642905986080187,
+            "Life_MyFamily_StartingFamily": 0.7080337576287244,
+            "Life_MyFamily_ProvidingChildren": 0.8921995424374347,
+            "Life_MyFamily_OlderChildren": 0.2231896056854959,
+            "Life_LaterLife_LivingWell": 0.1849900214012914,
+            "Life_LaterLife_HealthPlanning": 0.0448102613714991
+        },
+        "deprioritise": {
+            "Life_Home_FinishedMortgage": -0.11407250058773494,
+            "Life_LaterLife_BecomingGrandparent": -0.024654607698551968,
+            "Life_LaterLife_ReceivedInheritance": -0.0031650889052191695,
+            "Life_Luxuries_MajorPurchase": -0.12460797414673297,
+            "Life_Luxuries_Travel": -0.20689758130878302
+        }
+    },
+    "Life_Career_BusinessAfloat": {
+        "prioritise": {
+            "Life_Career_SecondIncome": 0.5151175867099518,
+            "Life_Career_GoingFreelance": 0.5006493693694916,
+            "Life_MyRelationships_GettingMarried": 0.14541761621863028,
+            "Life_Home_BuyingAHome": 0.49456657812389476,
+            "Life_Home_InvestingInProperty": 0.5477603658095455,
+            "Life_MyFamily_OlderChildren": 0.3544891075146888,
+            "Life_LaterLife_LivingWell": 0.3865651454836683,
+            "Life_LaterLife_ReceivedInheritance": 0.19616015887698598,
+            "Life_Luxuries_MajorPurchase": 0.1929436578887444,
+            "Life_Luxuries_Travel": 0.39286628396517703
+        },
+        "deprioritise": {
+            "Life_Career_Education": -0.06849641813485434,
+            "Life_Home_FinishedMortgage": -0.12277733345389963,
+            "Life_MyFamily_StartingFamily": -0.5252259194517471,
+            "Life_MyFamily_ProvidingChildren": -0.30266250092623326,
+            "Life_LaterLife_BecomingGrandparent": -0.0922833231371888,
+            "Life_LaterLife_HealthPlanning": -0.027785301538293228
+        }
+    },
+    "Life_MyRelationships_GettingMarried": {
+        "prioritise": {
+            "Life_Career_Education": 0.20223194171873163,
+            "Life_Career_GoingFreelance": 0.7579225986584561,
+            "Life_Career_BusinessAfloat": 0.11871361865082812,
+            "Life_Home_BuyingAHome": 0.20743299470560148,
+            "Life_Home_InvestingInProperty": 0.09203818384780535,
+            "Life_Home_FinishedMortgage": 0.1596335564705714,
+            "Life_MyFamily_StartingFamily": 0.7603339702858207,
+            "Life_MyFamily_ProvidingChildren": 0.34726160795242844,
+            "Life_LaterLife_HealthPlanning": 0.2093531435417011,
+            "Life_Luxuries_MajorPurchase": 0.17680664152328232
+        },
+        "deprioritise": {
+            "Life_Career_SecondIncome": -0.02258418053246768,
+            "Life_MyFamily_OlderChildren": -0.30853577229057755,
+            "Life_LaterLife_LivingWell": -0.07028023925783294,
+            "Life_LaterLife_BecomingGrandparent": -0.5118984548370863,
+            "Life_LaterLife_ReceivedInheritance": -0.13441376523777548,
+            "Life_Luxuries_Travel": -0.021893380757493523
+        }
+    },
+    "Life_Home_BuyingAHome": {
+        "prioritise": {
+            "Life_Career_SecondIncome": 0.26811207704269735,
+            "Life_Career_Education": 0.262040946048931,
+            "Life_Career_GoingFreelance": 0.4824921426020045,
+            "Life_Career_BusinessAfloat": 0.5090519160899257,
+            "Life_MyRelationships_GettingMarried": 0.2515920442433961,
+            "Life_MyFamily_ProvidingChildren": 0.4247997292161127,
+            "Life_MyFamily_OlderChildren": 0.004378169276863453,
+            "Life_LaterLife_LivingWell": 0.3485658880356639,
+            "Life_LaterLife_HealthPlanning": 0.2844365845389896,
+            "Life_LaterLife_ReceivedInheritance": 0.0885269798258419,
+            "Life_Luxuries_MajorPurchase": 0.05496286305492941,
+            "Life_Luxuries_Travel": 0.037064912394048334
+        },
+        "deprioritise": {
+            "Life_Home_InvestingInProperty": -0.11380678752136916,
+            "Life_Home_FinishedMortgage": -0.2543319552472157,
+            "Life_MyFamily_StartingFamily": -0.2022571385769368,
+            "Life_LaterLife_BecomingGrandparent": -0.24932371015279253
+        }
+    },
+    "Life_Home_InvestingInProperty": {
+        "prioritise": {
+            "Life_Career_GoingFreelance": 0.17577369829544046,
+            "Life_Career_BusinessAfloat": 0.5073411098039559,
+            "Life_MyRelationships_GettingMarried": 0.06786150638260581,
+            "Life_Home_FinishedMortgage": 0.6825407576963808,
+            "Life_MyFamily_ProvidingChildren": 0.15018547160868304,
+            "Life_LaterLife_LivingWell": 0.10002279635205352,
+            "Life_LaterLife_BecomingGrandparent": 0.3110019555036663,
+            "Life_LaterLife_HealthPlanning": 0.07008961579070477,
+            "Life_LaterLife_ReceivedInheritance": 0.2959780611810958,
+            "Life_Luxuries_MajorPurchase": 0.3945695933413718,
+            "Life_Luxuries_Travel": 0.4708949753199342
+        },
+        "deprioritise": {
+            "Life_Career_SecondIncome": -0.4120671885542292,
+            "Life_Career_Education": -0.05679085379345993,
+            "Life_Home_BuyingAHome": -0.19876526159763455,
+            "Life_MyFamily_StartingFamily": -0.1637047722614443,
+            "Life_MyFamily_OlderChildren": -0.19751553194548013
+        }
+    },
+    "Life_Home_FinishedMortgage": {
+        "prioritise": {
+            "Life_Career_SecondIncome": 0.07305047706021667,
+            "Life_MyRelationships_GettingMarried": 0.15584000962140054,
+            "Life_Home_InvestingInProperty": 0.7013604209195741,
+            "Life_MyFamily_ProvidingChildren": 0.19065235385359985,
+            "Life_LaterLife_LivingWell": 0.3902099348255014,
+            "Life_LaterLife_BecomingGrandparent": 0.11669070018094888,
+            "Life_LaterLife_ReceivedInheritance": 0.3679133941113677,
+            "Life_Luxuries_MajorPurchase": 0.32908961136773857,
+            "Life_Luxuries_Travel": 0.2345704759315563
+        },
+        "deprioritise": {
+            "Life_Career_Education": -0.24604207517392887,
+            "Life_Career_GoingFreelance": -0.12978286149115079,
+            "Life_Career_BusinessAfloat": -0.16457926257065217,
+            "Life_Home_BuyingAHome": -0.2708956229272051,
+            "Life_MyFamily_StartingFamily": -0.2493579762042222,
+            "Life_MyFamily_OlderChildren": -0.28749780972259925,
+            "Life_LaterLife_HealthPlanning": -0.11869123441556069
+        }
+    },
+    "Life_MyFamily_StartingFamily": {
+        "prioritise": {
+            "Life_Career_SecondIncome": 0.5473471738118285,
+            "Life_Career_Education": 0.05633010812782923,
+            "Life_Career_GoingFreelance": 0.7056168645105096,
+            "Life_MyRelationships_GettingMarried": 0.7214869859141118,
+            "Life_MyFamily_ProvidingChildren": 0.899111639363199,
+            "Life_MyFamily_OlderChildren": 0.627677797140376,
+            "Life_Luxuries_MajorPurchase": 0.38965972336090504,
+            "Life_Luxuries_Travel": 0.6144331753714654
+        },
+        "deprioritise": {
+            "Life_Career_BusinessAfloat": -0.5110362089024751,
+            "Life_Home_BuyingAHome": -0.0977431649270757,
+            "Life_Home_InvestingInProperty": -0.1429569730347345,
+            "Life_Home_FinishedMortgage": -0.2343692059875198,
+            "Life_LaterLife_LivingWell": -0.4641512183883995,
+            "Life_LaterLife_BecomingGrandparent": -0.20570778436407663,
+            "Life_LaterLife_HealthPlanning": -0.2257877354605122,
+            "Life_LaterLife_ReceivedInheritance": -0.31716218503739846
+        }
+    },
+    "Life_MyFamily_ProvidingChildren": {
+        "prioritise": {
+            "Life_Career_SecondIncome": 0.42738841258533466,
+            "Life_Career_Education": 0.20910620208840747,
+            "Life_Career_GoingFreelance": 0.9099669643072352,
+            "Life_MyRelationships_GettingMarried": 0.36711928749415385,
+            "Life_Home_BuyingAHome": 0.40561760416004594,
+            "Life_Home_InvestingInProperty": 0.20906950955041093,
+            "Life_Home_FinishedMortgage": 0.24393052572965002,
+            "Life_MyFamily_StartingFamily": 0.8922480790332105,
+            "Life_MyFamily_OlderChildren": 0.14222195196091347,
+            "Life_Luxuries_MajorPurchase": 0.08945669423892999
+        },
+        "deprioritise": {
+            "Life_Career_BusinessAfloat": -0.3620518675284526,
+            "Life_LaterLife_LivingWell": -0.03623321229149845,
+            "Life_LaterLife_BecomingGrandparent": -0.4526690535676402,
+            "Life_LaterLife_HealthPlanning": -0.4165712325677207,
+            "Life_LaterLife_ReceivedInheritance": -0.6458800406753183,
+            "Life_Luxuries_Travel": -0.6104820604654934
+        }
+    },
+    "Life_MyFamily_OlderChildren": {
+        "prioritise": {
+            "Life_Career_SecondIncome": 0.41042566252652835,
+            "Life_Career_Education": 0.4224721705463293,
+            "Life_Career_GoingFreelance": 0.29986360262646927,
+            "Life_Career_BusinessAfloat": 0.33318851471795696,
+            "Life_MyFamily_StartingFamily": 0.5689661761895779,
+            "Life_MyFamily_ProvidingChildren": 0.17703192561752604,
+            "Life_LaterLife_BecomingGrandparent": 0.17089416681000558,
+            "Life_LaterLife_HealthPlanning": 0.05812005756186777
+        },
+        "deprioritise": {
+            "Life_MyRelationships_GettingMarried": -0.3312660237931805,
+            "Life_Home_BuyingAHome": -0.007110150231452297,
+            "Life_Home_InvestingInProperty": -0.1852224078968125,
+            "Life_Home_FinishedMortgage": -0.32994738100116067,
+            "Life_LaterLife_LivingWell": -0.03913900322807626,
+            "Life_LaterLife_ReceivedInheritance": -0.031919128288738614,
+            "Life_Luxuries_MajorPurchase": -0.45690602643824835,
+            "Life_Luxuries_Travel": -0.40614934193115443
+        }
+    },
+    "Life_LaterLife_LivingWell": {
+        "prioritise": {
+            "Life_Career_SecondIncome": 0.5643440983053036,
+            "Life_Career_Education": 0.07246116635168429,
+            "Life_Career_GoingFreelance": 0.1753398373763052,
+            "Life_Career_BusinessAfloat": 0.37196792326349487,
+            "Life_Home_BuyingAHome": 0.31912431464168817,
+            "Life_Home_InvestingInProperty": 0.10795068469588233,
+            "Life_Home_FinishedMortgage": 0.384490096464809,
+            "Life_LaterLife_BecomingGrandparent": 0.14584906976167494,
+            "Life_LaterLife_HealthPlanning": 0.4627807715269948,
+            "Life_LaterLife_ReceivedInheritance": 0.04976284937940999,
+            "Life_Luxuries_MajorPurchase": 0.02198774711579458
+        },
+        "deprioritise": {
+            "Life_MyRelationships_GettingMarried": -0.09685182138835867,
+            "Life_MyFamily_StartingFamily": -0.5005496995903381,
+            "Life_MyFamily_ProvidingChildren": -0.023466655010190976,
+            "Life_MyFamily_OlderChildren": -0.060485801933596275,
+            "Life_Luxuries_Travel": -0.03377227320198643
+        }
+    },
+    "Life_LaterLife_BecomingGrandparent": {
+        "prioritise": {
+            "Life_Career_SecondIncome": 0.06247107853277163,
+            "Life_Career_Education": 0.3730857307893988,
+            "Life_Home_InvestingInProperty": 0.333516896419499,
+            "Life_Home_FinishedMortgage": 0.13143483948152668,
+            "Life_MyFamily_OlderChildren": 0.14773340874143823,
+            "Life_LaterLife_LivingWell": 0.15657416968434812,
+            "Life_LaterLife_HealthPlanning": 0.22992890547370826,
+            "Life_LaterLife_ReceivedInheritance": 0.04764595497602103,
+            "Life_Luxuries_MajorPurchase": 0.3209182250969896
+        },
+        "deprioritise": {
+            "Life_Career_GoingFreelance": -0.05223029998217373,
+            "Life_Career_BusinessAfloat": -0.056835863796645396,
+            "Life_MyRelationships_GettingMarried": -0.5238308141937646,
+            "Life_Home_BuyingAHome": -0.2818626495683157,
+            "Life_MyFamily_StartingFamily": -0.2157559726108906,
+            "Life_MyFamily_ProvidingChildren": -0.4820072188135389,
+            "Life_Luxuries_Travel": -0.13900972560164573
+        }
+    },
+    "Life_LaterLife_HealthPlanning": {
+        "prioritise": {
+            "Life_Career_SecondIncome": 0.5569607549628722,
+            "Life_Career_GoingFreelance": 0.04701328868910972,
+            "Life_MyRelationships_GettingMarried": 0.21429435373139616,
+            "Life_Home_BuyingAHome": 0.276143534113578,
+            "Life_Home_InvestingInProperty": 0.07556539928907449,
+            "Life_MyFamily_OlderChildren": 0.049488180114136145,
+            "Life_LaterLife_LivingWell": 0.4603023920330002,
+            "Life_LaterLife_BecomingGrandparent": 0.22337067931808763
+        },
+        "deprioritise": {
+            "Life_Career_Education": -0.07568292792645612,
+            "Life_Career_BusinessAfloat": -0.036016511930986934,
+            "Life_Home_FinishedMortgage": -0.10501518152895799,
+            "Life_MyFamily_StartingFamily": -0.14637594958404315,
+            "Life_MyFamily_ProvidingChildren": -0.4011401100190001,
+            "Life_LaterLife_ReceivedInheritance": -0.053913866675934126,
+            "Life_Luxuries_MajorPurchase": -0.07559147470736909,
+            "Life_Luxuries_Travel": -0.03574862030626647
+        }
+    },
+    "Life_LaterLife_ReceivedInheritance": {
+        "prioritise": {
+            "Life_Career_Education": 0.23215120355455726,
+            "Life_Career_BusinessAfloat": 0.1937254884000754,
+            "Life_Home_BuyingAHome": 0.07590322719736677,
+            "Life_Home_InvestingInProperty": 0.27498076158921675,
+            "Life_Home_FinishedMortgage": 0.3698575082456697,
+            "Life_LaterLife_LivingWell": 0.0482670355473698,
+            "Life_LaterLife_BecomingGrandparent": 0.044955914925414245,
+            "Life_Luxuries_MajorPurchase": 0.03313181976719723,
+            "Life_Luxuries_Travel": 0.06945745205378294
+        },
+        "deprioritise": {
+            "Life_Career_SecondIncome": -0.2880507359185414,
+            "Life_Career_GoingFreelance": -0.015215560693144309,
+            "Life_MyRelationships_GettingMarried": -0.14522583819839002,
+            "Life_MyFamily_StartingFamily": -0.33164806410855396,
+            "Life_MyFamily_ProvidingChildren": -0.6627212443152277,
+            "Life_MyFamily_OlderChildren": -0.023771857543096596,
+            "Life_LaterLife_HealthPlanning": -0.053041113310429995
+        }
+    },
+    "Life_Luxuries_MajorPurchase": {
+        "prioritise": {
+            "Life_Career_Education": 0.20339743451858688,
+            "Life_Career_BusinessAfloat": 0.19691439084927112,
+            "Life_MyRelationships_GettingMarried": 0.18004946845241804,
+            "Life_Home_BuyingAHome": 0.018986480905648848,
+            "Life_Home_InvestingInProperty": 0.393272981611659,
+            "Life_Home_FinishedMortgage": 0.3277219899929733,
+            "Life_MyFamily_StartingFamily": 0.3897888673373238,
+            "Life_MyFamily_ProvidingChildren": 0.09515261566596514,
+            "Life_LaterLife_LivingWell": 0.02280571588331227,
+            "Life_LaterLife_BecomingGrandparent": 0.31674785019803925,
+            "Life_LaterLife_ReceivedInheritance": 0.039620799399055856,
+            "Life_Luxuries_Travel": 0.25915383425387706
+        },
+        "deprioritise": {
+            "Life_Career_SecondIncome": -0.027267324537488223,
+            "Life_Career_GoingFreelance": -0.1322896183577001,
+            "Life_MyFamily_OlderChildren": -0.4624099649370638,
+            "Life_LaterLife_HealthPlanning": -0.07997073679163895
+        }
+    },
+    "Life_Luxuries_Travel": {
+        "prioritise": {
+            "Life_Career_Education": 0.3591184029575262,
+            "Life_Career_BusinessAfloat": 0.3801182027103479,
+            "Life_Home_BuyingAHome": 0.018279119742496165,
+            "Life_Home_InvestingInProperty": 0.46892523191971086,
+            "Life_Home_FinishedMortgage": 0.2410336889862715,
+            "Life_MyFamily_StartingFamily": 0.6141883218502996,
+            "Life_LaterLife_ReceivedInheritance": 0.08213788660380972,
+            "Life_Luxuries_MajorPurchase": 0.2613744943595091
+        },
+        "deprioritise": {
+            "Life_Career_SecondIncome": -0.04379439295705333,
+            "Life_Career_GoingFreelance": -0.19201053558044212,
+            "Life_MyRelationships_GettingMarried": -0.013014982453909356,
+            "Life_MyFamily_ProvidingChildren": -0.6221647736705126,
+            "Life_MyFamily_OlderChildren": -0.39710785821173195,
+            "Life_LaterLife_LivingWell": -0.03845753912344248,
+            "Life_LaterLife_BecomingGrandparent": -0.12739876519082566,
+            "Life_LaterLife_HealthPlanning": -0.03073090794687666
+        }
+    }
+}
