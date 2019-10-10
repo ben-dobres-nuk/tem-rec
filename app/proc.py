@@ -3,7 +3,7 @@ import json
 conversion_dict = {
     "asp.movehomeTRUE": "LifeContent_Myhome_Plantobuy",
     "asp.homeimpTRUE": "ProductContent_Mortgages_HomeImprovement",
-    "asp.holidayTRUE": "LifeContent: Luxury",
+    "asp.holidayTRUE": "LifeContent_Luxury",
     "concerned.retireVery concerned": "LifeContent_LaterLife_LivingWell_VeryConcerned",
     "concerned.retireSlightly concerned": "life_laterlife_livingwell.low",
     "concerned.retireNot at all concerned": "life_laterlife_livingwell.none",
