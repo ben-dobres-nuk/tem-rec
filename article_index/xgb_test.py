@@ -47,7 +47,7 @@ def trial_seed(n):
 
     xgb.fit(X, y)
     score = xgb.score(X, y)
-    text_output = "Score for seed {0} is {1}".format((n, score))
+    text_output = "Score for seed {} is {}".format(n, score)
     print(text_output)
 
     return (xgb.predict(X))
