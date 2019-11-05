@@ -44,6 +44,8 @@ all_data = pd.read_pickle('all_data_reindex.pkl')
 data_sample = all_data.sample(frac=0.1)
 
 X = data_sample[yaml_feature_names]
+y = data_sample['avg_dwell_time_subscriber_read']
+
 print("X shape:")
 print(X.shape)
 print("      ")
