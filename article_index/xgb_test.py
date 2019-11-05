@@ -10,6 +10,27 @@ from glob import glob
 from copy import deepcopy
 import yaml
 
+
+yaml_feature_names = ["proportion_internal_index_subscriber_read",
+"proportion_internal_article_subscriber_read",
+"proportion_direct_subscriber_read",
+"proportion_desktop_web_subscriber_read",
+"proportion_mobile_web_subscriber_read",
+"proportion_other_web_subscriber_read",
+"proportion_apps_subscriber_read",
+"unique_commenters",
+"comments",
+"save_adds_subscriber_read",
+"avg_session_hit_count_subscriber_read",
+"avg_session_read_count_subscriber_read",
+"words",
+"sentences",
+"cs_section_category",
+"section_category",
+"num_characters",
+"age_hours",
+"day_of_week"]
+
 all_data = pd.read_pickle('article_index/data/all_data_reindex.pkl')
 
 data_sample = all_data.sample(frac=0.1)
