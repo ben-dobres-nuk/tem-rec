@@ -48,7 +48,8 @@ class ArticleClassifier(nn.Module):
         Returns:
             the resulting tensor. tensor.shape should be (batch, num_classes)
         """
-        # features = self.convnet(x_surname).squeeze(dim=2)
+        # features = self.convnet(x_article).squeeze(dim=2)
+
         features = self.convnet(x_article)
 
         prediction_vector = self.fc(features)

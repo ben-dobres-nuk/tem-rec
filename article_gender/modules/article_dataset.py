@@ -123,7 +123,7 @@ class ArticleDataset(Dataset):
             self._vectorizer.vectorize(row.article_content)
 
         fem_index = \
-            self._vectorizer.article_vocab.lookup_token(row.fem)
+            row.fem
 
         return {
             'x_article': article_matrix,

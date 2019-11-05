@@ -10,7 +10,7 @@ from glob import glob
 from copy import deepcopy
 import yaml
 
-#all_data = pd.read_pickle('article_index/data/all_data_reindex.pkl')
+all_data = pd.read_pickle('article_index/data/all_data_reindex.pkl')
 
 data_sample = all_data.sample(frac=0.1)
 

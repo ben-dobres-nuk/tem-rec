@@ -4,8 +4,7 @@ import torch
 from argparse import Namespace
 from modules.vocabulary import Vocabulary
 from modules.vectorizer import ArticleVectorizer
-from modules.article_dataset import ArticleDataset
-from modules.utils import generate_batches
+from modules.article_dataset import ArticleDataset, generate_batches
 
 args = Namespace(
     # Data and Path information
@@ -37,5 +36,11 @@ dataset.set_split('train')
 args.device = torch.device("cuda" if args.cuda else "cpu")
 batch_generator = generate_batches(
     dataset, batch_size=args.batch_size, device=args.device)
+
 for batch in batch_generator:
-    print(batch)
+    batch1 = batch
+    article_tensor = batch1['x_article']
+    fem_tensor = batch1['y_fem']
+    print(article_tensor.shape)
+    print(fem_tensor.shape)
+    break

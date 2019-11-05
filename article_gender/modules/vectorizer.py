@@ -17,10 +17,10 @@ class ArticleVectorizer(object):
         self.article_vocab = article_vocab
 
     def vectorize(self, article):
-        """Create a collapsed one-hit vector for the review
+        """Create a collapsed one-hit vector for the article
 
         Args:
-            review (str): the review
+            article (str): the article
         Returns            one_hot (np.ndarray): th:
 e collapsed one-hot encoding
         """

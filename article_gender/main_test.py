@@ -7,6 +7,7 @@ import torch.nn as nn
 
 from argparse import Namespace
 from tqdm import tqdm_notebook
+from pprint import pprint
 
 from modules.article_dataset import ArticleDataset
 from modules.classifier import ArticleClassifier
@@ -21,7 +22,7 @@ args = Namespace(
     save_dir="model_storage",
     # Model hyper parameters
     hidden_dim=100,
-    num_channels=256,
+    num_channels=128,
     # Training hyper parameters
     seed=1337,
     learning_rate=0.001,
@@ -133,6 +134,10 @@ try:
             # --------------------------------------
             # step 1. zero the gradients
             optimizer.zero_grad()
+
+            x_article = batch_dict['x_article']
+
+            pprint(x_article.shape)
 
             # step 2. compute the output
             y_pred = classifier(batch_dict['x_article'])
