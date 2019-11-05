@@ -32,7 +32,7 @@ print("      ")
 def trial_seed(n):
     xgb = XGBRegressor(
         max_depth=3,
-        seed=2012,
+        seed=n,
         learning_rate=0.1,
         colsample_bylevel=0.9,
         subsample=0.7,
