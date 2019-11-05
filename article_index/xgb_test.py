@@ -60,7 +60,7 @@ def make_seed_dataset(n_seeds):
 
     df = pd.DataFrame(
         np.vstack(trials),
-        columns=["row" + str(x) for x in range(1, y.shape[0])])
+        columns=["row" + str(x) for x in range(1, y.shape[0] + 1)])
     df.to_csv("seed_datset.csv")
 
 
