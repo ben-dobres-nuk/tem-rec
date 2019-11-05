@@ -1,14 +1,6 @@
 import pandas as pd
-import numpy as np
 
 from xgboost import XGBRegressor
-from sklearn.metrics import r2_score
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import GridSearchCV, RandomizedSearchCV, train_test_split, cross_val_score
-from sklearn.feature_selection import RFECV
-from glob import glob
-from copy import deepcopy
-import yaml
 
 yaml_feature_names = [
     "proportion_internal_index_subscriber_read",
@@ -24,33 +16,37 @@ yaml_feature_names = [
     "day_of_week"
 ]
 
-xgb = XGBRegressor(
-    max_depth=3,
-    seed=2012,
-    learning_rate=0.1,
-    colsample_bylevel=0.9,
-    subsample=0.7,
-    n_estimators=1000,
-    silent=True,
-    objective='reg:linear',
-    n_jobs=-1,
-    min_child_weight=5,
-    reg_lambda=3,
-    gamma=2,
-    colsample_bytree=0.9)
-
 all_data = pd.read_pickle('all_data_reindex.pkl')
-
 data_sample = all_data.sample(frac=0.1)
 
 X = data_sample[yaml_feature_names]
 y = data_sample['avg_dwell_time_subscriber_read']
-
 print("X shape:")
 print(X.shape)
 print("      ")
-xgb.fit(X, y)
-score = xgb.score(X, y)
 
-print("score:")
-print(score)
+
+def trial_seed(n):
+    xgb = XGBRegressor(
+        max_depth=3,
+        seed=2012,
+        learning_rate=0.1,
+        colsample_bylevel=0.9,
+        subsample=0.7,
+        n_estimators=1000,
+        silent=True,
+        objective='reg:linear',
+        n_jobs=-1,
+        min_child_weight=5,
+        reg_lambda=3,
+        gamma=2,
+        colsample_bytree=0.9)
+
+    xgb.fit(X, y)
+    score = xgb.score(X, y)
+    text_output = "Score for seed {0} is {1}".format((n, score))
+    print(text_output)
+
+
+for n in range(1, 10):
+    trial_seed(n)
