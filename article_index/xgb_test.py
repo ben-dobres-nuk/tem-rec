@@ -1,6 +1,9 @@
 import pandas as pd
+import numpy as np
 
 from xgboost import XGBRegressor
+
+n_seeds = 3
 
 yaml_feature_names = [
     "proportion_internal_index_subscriber_read",
@@ -47,6 +50,19 @@ def trial_seed(n):
     text_output = "Score for seed {0} is {1}".format((n, score))
     print(text_output)
 
+    return (xgb.predict(X))
 
-for n in range(1, 10):
-    trial_seed(n)
+
+def make_seed_dataset(n_seeds):
+    trials = []
+    for n in range(1, n_seeds):
+        trials.append(trial_seed(n))
+
+    df = pd.DataFrame(
+        np.vstack(trials),
+        columns=["row" + str(x) for x in range(1, y.shape[0])])
+    df.to_csv("seed_datset.csv")
+
+
+if __name__ == '__main__':
+    make_seed_dataset(n_seeds)
