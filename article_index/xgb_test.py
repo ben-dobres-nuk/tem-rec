@@ -1,9 +1,10 @@
 import pandas as pd
 import numpy as np
+import random
 
 from xgboost import XGBRegressor
 
-n_seeds = 3
+n_seeds = 2
 
 yaml_feature_names = [
     "proportion_internal_index_subscriber_read",
@@ -27,6 +28,9 @@ y = data_sample['avg_dwell_time_subscriber_read']
 print("X shape:")
 print(X.shape)
 print("      ")
+
+# generate seeds for random sample later
+seed2 = random.sample(range(1, X.shape - 1), 1000)
 
 
 def trial_seed(n):
@@ -54,6 +58,7 @@ def trial_seed(n):
 
 
 def make_seed_dataset(n_seeds):
+    # sample again to give us a small enough dataset for EDA
     trials = []
     for n in range(1, n_seeds):
         trials.append(trial_seed(n))
@@ -61,6 +66,7 @@ def make_seed_dataset(n_seeds):
     df = pd.DataFrame(
         np.vstack(trials),
         columns=["row" + str(x) for x in range(1, y.shape[0] + 1)])
+    print("Creating seed dataset of shape {}".format(df.shape))
     df.to_csv("seed_datset.csv")
 
 
