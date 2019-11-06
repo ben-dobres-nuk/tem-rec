@@ -30,7 +30,7 @@ print(X.shape)
 print("      ")
 
 # generate seeds for random sample later
-seed2 = random.sample(range(1, X.shape - 1), 1000)
+#seed2 = random.sample(range(1, X.shape - 1), 1000)
 
 
 def trial_seed(n):
