@@ -1,10 +1,10 @@
 import pandas as pd
 import numpy as np
-import random
+# import random
 
 from xgboost import XGBRegressor
 
-n_seeds = 2
+n_seeds = 30
 
 yaml_feature_names = [
     "proportion_internal_index_subscriber_read",
@@ -58,7 +58,6 @@ def trial_seed(n):
 
 
 def make_seed_dataset(n_seeds):
-    # sample again to give us a small enough dataset for EDA
     trials = []
     for n in range(1, n_seeds):
         trials.append(trial_seed(n))
@@ -71,6 +70,7 @@ def make_seed_dataset(n_seeds):
     stats["mean"] = df.mean(axis=0)
     stats["Std.Dev"] = df.std(axis=0)
     stats["Var"] = df.var(axis=0)
+    print("Creating summary dataset of shape {}".format(stats.shape))
     df.to_csv("raw_seed_datset.csv")
     stats.to_csv("seed_stats.csv")
 
