@@ -30,7 +30,7 @@ print(X.shape)
 print("      ")
 
 # generate seeds for random sample later
-#seed2 = random.sample(range(1, X.shape - 1), 1000)
+# seed2 = random.sample(range(1, X.shape - 1), 1000)
 
 
 def trial_seed(n):
@@ -67,7 +67,12 @@ def make_seed_dataset(n_seeds):
         np.vstack(trials),
         columns=["row" + str(x) for x in range(1, y.shape[0] + 1)])
     print("Creating seed dataset of shape {}".format(df.shape))
-    df.to_csv("seed_datset.csv")
+    stats = pd.DataFrame()
+    stats["mean"] = df.mean(axis=0)
+    stats["Std.Dev"] = df.std(axis=0)
+    stats["Var"] = df.var(axis=0)
+    df.to_csv("raw_seed_datset.csv")
+    stats.to_csv("seed_stats.csv")
 
 
 if __name__ == '__main__':
