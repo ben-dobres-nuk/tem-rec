@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import random
 
 from xgboost import XGBRegressor
 # from sklearn.kernel_ridge import KernelRidge
@@ -10,10 +9,6 @@ from sklearn.model_selection import cross_validate
 import argparse
 import logging
 import warnings
-
-logging.basicConfig(
-    filename='seed_test_' + str(random.getrandbits(20)) + '.log',
-    level=logging.DEBUG)
 
 parser = argparse.ArgumentParser()
 
@@ -144,6 +139,10 @@ def make_seed_dataset(model, params, n_seeds, seed_param):
 
 
 if __name__ == '__main__':
+    logging.basicConfig(
+        filename='seed_test_ss_' + str(len(data_sample.index)) + '.log',
+        level=logging.DEBUG)
+
     n_seeds = 30
 
     make_seed_dataset(XGBRegressor, xgb_params, n_seeds, seed_param="seed")
