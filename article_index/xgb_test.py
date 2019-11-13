@@ -115,11 +115,14 @@ def make_seed_dataset(model, params, n_seeds, index):
         model.fit(X, y)
         cv = cross_validate(model, X, y, cv=2)
         prop_high_stdev = 0
+        logging.info(
+            "Mean cross-validation score: {}".format(cv["test_score"]))
 
     logging.info("Proportion of obervations with Standard Deviation > 2: {}".
                  format(prop_high_stdev))
 
-    logging.info("Mean cross-validation score: {}".format(cv["test_score"]))
+    logging.info("Mean cross-validation score: {}".format(
+        np.mean(trials["test_score"])))
 
 
 if __name__ == '__main__':
