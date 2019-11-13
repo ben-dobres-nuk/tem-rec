@@ -1,9 +1,8 @@
 import pandas as pd
 import numpy as np
+import json
 
 from xgboost import XGBRegressor
-# from sklearn.kernel_ridge import KernelRidge
-# from sklearn.svm import SVR, LinearSVR
 from sklearn.model_selection import cross_validate
 
 import argparse
@@ -16,7 +15,7 @@ parser.add_argument(
     '-s',
     '--sample',
     type=float,
-    default=0.001,
+    default=0.01,
     help="sample size as a fraction")
 
 args = parser.parse_args()
@@ -59,40 +58,13 @@ y = data_sample['avg_dwell_time_subscriber_read']
 # generate seeds for random sample later
 # seed2 = random.sample(range(1, X.shape - 1), 1000)
 
-# booster: gbtree, gblinear or dart?
-
-xgb_params = {
-    'max_depth': 2,
-    'learning_rate': 0.1,
-    'colsample_bylevel': 0.9,
-    'subsample': 0.7,
-    'n_estimators': 1000,
-    'silent': True,
-    # switched reg:linear for reg:squarederror
-    'objective': 'reg:squarederror',
-    'n_jobs': -1,
-    'min_child_weight': 5,
-    'reg_lambda': 3,
-    'gamma': 10,
-    'colsample_bytree': 0.9
-}
-
-# linsvr_params = {
-#     'C': 1.0,
-#     'dual': True,
-#     'epsilon': 0.0,
-#     'fit_intercept': True,
-#     'intercept_scaling': 1.0,
-#     'loss': 'epsilon_insensitive',
-#     'max_iter': 1000000
-# }
-# svr_params = {'kernel': 'rbf', 'gamma': '0.1'}
-# krr_params = {'kernel': 'rbf', 'gamma': '0.1'}
+with open('param_list.json') as json_file:
+    param_list = json.load(json_file)
 
 
-def trial_seed(model, params, n, seed_param):
+def trial_seed(model, params, n):
 
-    params[seed_param] = n
+    params["seed"] = n
 
     model = model(**params)
 
@@ -103,39 +75,51 @@ def trial_seed(model, params, n, seed_param):
     return ((model.predict(X), cv['test_score']))
 
 
-def make_seed_dataset(model, params, n_seeds, seed_param):
+def make_seed_dataset(model, params, n_seeds, index):
+    '''
+    Make a seed dataset of size <n_seeds> to compute the variance across
+    different seeds for given parameters of an XGBoost model.
+    A dataset "seed_stats_[index].csv" will be created,
+    corrseponding to the index of the parameter set used.
+    '''
+
     logging.info("model: {}".format(str(model)))
     logging.info("sample size: {}".format(len(data_sample.index)))
     logging.info(yaml_feature_names)
     logging.info(params)
     logging.info("Number of seeds: {}".format(n_seeds))
     trials = {"seeds": [], "test_score": []}
-    for n in range(1, n_seeds):
-        trial = trial_seed(model, params, n, seed_param)
-        trials["seeds"].append(trial[0])
-        trials["test_score"].append(trial[1][0])
 
-    mean_cv_score = np.mean(trials["test_score"])
-
-    df = pd.DataFrame(
-        np.vstack(trials["seeds"]),
-        columns=["row" + str(x) for x in range(1, y.shape[0] + 1)])
-    logging.info("Created seed dataset of shape {}".format(df.shape))
-    # Create summary dataframe with a row for each observation
-    stats = pd.DataFrame()
-    # mean, standard deviation and variance for each observation across seeds:
-    stats["mean"] = df.mean()
-    stats["st_dev"] = df.std()
-    stats["var"] = df.var()
-    print("Creating summary dataset of shape {}".format(stats.shape))
-    df.to_csv("raw_seed_datset.csv")
-    stats.to_csv("seed_stats.csv")
-    prop_high_stdev = sum(stats["st_dev"] > 2) / len(stats["st_dev"])
+    if params["booster"] != "gblinear":
+        for n in range(1, n_seeds):
+            trial = trial_seed(model, params, n)
+            trials["seeds"].append(trial[0])
+            trials["test_score"].append(trial[1][0])
+        df = pd.DataFrame(
+            np.vstack(trials["seeds"]),
+            columns=["row" + str(x) for x in range(1, y.shape[0] + 1)])
+        logging.info("Created seed dataset of shape {}".format(df.shape))
+        # Create summary dataframe with a row for each observation
+        stats = pd.DataFrame()
+        # mean, standard deviation and variance
+        #  for each observation across seeds:
+        stats["mean"] = df.mean()
+        stats["st_dev"] = df.std()
+        stats["var"] = df.var()
+        print("Creating summary dataset of shape {}".format(stats.shape))
+        df.to_csv("raw_seed_datset.csv")
+        stats.to_csv("seed_stats_" + str(index) + ".csv")
+        prop_high_stdev = sum(stats["st_dev"] > 2) / len(stats["st_dev"])
+    else:
+        model = model(**params)
+        model.fit(X, y)
+        cv = cross_validate(model, X, y, cv=2)
+        prop_high_stdev = 0
 
     logging.info("Proportion of obervations with Standard Deviation > 2: {}".
                  format(prop_high_stdev))
 
-    logging.info("Mean cross-validation score: {}".format(mean_cv_score))
+    logging.info("Mean cross-validation score: {}".format(cv["test_score"]))
 
 
 if __name__ == '__main__':
@@ -145,5 +129,7 @@ if __name__ == '__main__':
 
     n_seeds = 30
 
-    make_seed_dataset(XGBRegressor, xgb_params, n_seeds, seed_param="seed")
-    logging.info("end of seed test")
+    for index, xgb_params in enumerate(param_list):
+        logging.info("***start of seed test for params " + str(index) + "***")
+        make_seed_dataset(XGBRegressor, xgb_params, n_seeds, index)
+        logging.info("***end of seed test for params " + str(index) + "***")
