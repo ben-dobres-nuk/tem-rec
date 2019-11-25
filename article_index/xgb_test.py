@@ -3,8 +3,8 @@ import numpy as np
 import json
 
 from xgboost import XGBRegressor
-from sklearn.model_selection import cross_validate
-
+from sklearn.model_selection import cross_validate, TimeSeriesSplit
+from sklearn.metrics import r2_score
 import argparse
 import logging
 import warnings
@@ -15,7 +15,7 @@ parser.add_argument(
     '-s',
     '--sample',
     type=float,
-    default=0.01,
+    default=0.001,
     help="sample size as a fraction")
 
 args = parser.parse_args()
@@ -53,7 +53,7 @@ all_data = pd.read_pickle('all_data_reindex.pkl')
 data_sample = all_data.sample(frac=args.sample, random_state=801)
 
 X = data_sample[yaml_feature_names]
-y = data_sample['avg_dwell_time_subscriber_read']
+y = np.log(data_sample['avg_dwell_time_subscriber_read'] + 0.0000000000000001)
 
 # generate seeds for random sample later
 # seed2 = random.sample(range(1, X.shape - 1), 1000)
@@ -62,7 +62,7 @@ with open('param_list.json') as json_file:
     param_list = json.load(json_file)
 
 
-def trial_seed(model, params, n):
+def trial_seed(model, params, n, cv=2):
 
     params["seed"] = n
 
@@ -70,9 +70,9 @@ def trial_seed(model, params, n):
 
     model.fit(X, y)
     # cross validate
-    cv = cross_validate(model, X, y, cv=2)
+    cv = cross_validate(model, X, y, cv=TimeSeriesSplit(n_splits=cv))
 
-    return ((model.predict(X), cv['test_score']))
+    return ((model.predict(X), cv))
 
 
 def make_seed_dataset(model, params, n_seeds, index):
@@ -94,7 +94,7 @@ def make_seed_dataset(model, params, n_seeds, index):
         for n in range(1, n_seeds):
             trial = trial_seed(model, params, n)
             trials["seeds"].append(trial[0])
-            trials["test_score"].append(trial[1][0])
+            trials["test_score"].append(trial[1][0]['test_score'])
         df = pd.DataFrame(
             np.vstack(trials["seeds"]),
             columns=["row" + str(x) for x in range(1, y.shape[0] + 1)])
@@ -133,6 +133,21 @@ if __name__ == '__main__':
     n_seeds = 30
 
     for index, xgb_params in enumerate(param_list):
-        logging.info("***start of seed test for params " + str(index) + "***")
-        make_seed_dataset(XGBRegressor, xgb_params, n_seeds, index)
-        logging.info("***end of seed test for params " + str(index) + "***")
+        # check to see if we are running a determinisic model.
+        # If we aren't, test across 30 different seeds
+        if (xgb_params["colsample_bytree"] != 1 and
+                xgb_params["subsample"] != 1):
+            logging.info("***start of seed test for params " + str(index) +
+                         "***")
+            make_seed_dataset(XGBRegressor, xgb_params, n_seeds, index)
+            logging.info("***end of seed test for params " + str(index) +
+                         "***")
+        # If we are, just run a single iteration of the model
+        else:
+            logging.info("Running determinisic model")
+            logging.info(yaml_feature_names)
+            logging.info(xgb_params)
+            predictions, cv = trial_seed(
+                model=XGBRegressor, params=xgb_params, n=1, cv=5)
+            logging.info("Accuracy:{}".format(str(r2_score(y, predictions))))
+            logging.info(cv)
