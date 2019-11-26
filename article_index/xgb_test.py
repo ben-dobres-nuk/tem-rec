@@ -15,7 +15,7 @@ parser.add_argument(
     '-s',
     '--sample',
     type=float,
-    default=0.001,
+    default=0.01,
     help="sample size as a fraction")
 
 args = parser.parse_args()
@@ -64,13 +64,15 @@ with open('param_list.json') as json_file:
 
 def trial_seed(model, params, n, cv=2):
 
+    # TimeSeriesSplit(n_splits=cv)
+
     params["seed"] = n
 
     model = model(**params)
 
     model.fit(X, y)
     # cross validate
-    cv = cross_validate(model, X, y, cv=TimeSeriesSplit(n_splits=cv))
+    cv = cross_validate(model, X, y, cv=cv)
 
     return ((model.predict(X), cv))
 
@@ -113,7 +115,7 @@ def make_seed_dataset(model, params, n_seeds, index):
     else:
         model = model(**params)
         model.fit(X, y)
-        cv = cross_validate(model, X, y, cv=2)
+        cv = cross_validate(model, X, y, cv=3)
         prop_high_stdev = 0
         logging.info(
             "Mean cross-validation score: {}".format(cv["test_score"]))
